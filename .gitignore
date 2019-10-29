@@ -3,3 +3,12 @@
 ################################################################################
 
 /.vs/hLogNet/v15
+/.vs/config
+/hLogNet/bin/Debug/netcoreapp2.0
+/hLogNet/obj
+/hLogNet.Application/bin/Debug/netcoreapp2.0
+/hLogNet.Application/obj
+/hLogNet.Infra.Data/obj
+/hLogNet.Infra.Data/bin/Debug/netcoreapp2.0
+/hLogNet.Domain/obj
+/hLogNet.Domain/bin/Debug/netcoreapp2.0

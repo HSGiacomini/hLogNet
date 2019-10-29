@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\hLogNet.Domain\hLogNet.Domain.csproj" />
+    <ProjectReference Include="..\hLogNet.Infra.Data\hLogNet.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>
