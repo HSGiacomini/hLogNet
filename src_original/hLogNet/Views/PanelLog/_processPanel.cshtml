@@ -1,0 +1,43 @@
+﻿@model hLogNet.Models.Process
+@{
+}
+
+<div class="@CorBox(Model.Status)" >
+    <h4><i class="fa fa-cog"></i> @Model.Name
+ 
+        @if (Model.Details.FindAll(x => x.Status == "ERROR").Count() > 0)
+        {
+            <span class="label label-danger pull-right"><i class="fa fa-exclamation-triangle"></i></span> 
+        }
+        
+        @if (Model.Details.FindAll(x => x.Status == "Warning").Count() > 0)
+        {
+                <span class="label label-warning pull-right"><i class="fa fa-exclamation-triangle"></i></span>
+        }
+    </h4>
+
+    <i class="fa  fa-clock-o"></i>  @Model.StartDate.ToString("dd-MM-yyyy HH:mm:ss")<br />
+    <i class="fa  fa-clock-o"></i>  @Model.EndDate.ToString("dd-MM-yyyy HH:mm:ss") <br />
+    <span class="small-box-footer pull-right">Detalhes 
+    @Html.ActionLink("", "Detail", new { processId = Model.ProcessId }, new { @class = "fa fa-arrow-circle-right", @style = "" })
+    </span>
+    
+    <br />
+</div>
+
+@functions
+{
+    public string CorBox(string status)
+    {
+        if (status.Equals("Error"))
+            return "callout callout-danger";
+        else if (status.Equals("Warning"))
+            return "callout callout-warning";
+        else if (status.Equals("OK"))
+            return "callout callout-success";
+        else
+            return "callout callout-info";
+    }
+
+}
+   

@@ -1,0 +1,52 @@
+﻿@model hLogNet.Models.Process
+<div class="col-xs-12">
+    <div class="text-right">
+        @Html.ActionLink("Voltar", "Index", new { }, new { @class = "btn btn-default", @style = "text-align:right;" })
+    </div>
+    
+    <br/>
+    <div class="box box-info">
+        <div class="box-header">
+            <h3 class="box-title">
+                Detalhes do processo: <b>@Model.Name</b>
+            </h3>
+            <div class="row">
+                <h4 class="col-md-4">Group : <b>@Model.Group</b></h4>
+                <h4 class="col-md-4">Start Date : <b>@Model.StartDate</b></h4>
+                <h4 class="col-md-4">End Date : <b>@Model.EndDate</b></h4>
+            </div>
+            <div class="row">
+                <h4 class="col-md-12">Observation : <b>@Model.Observation</b></h4>
+            </div>
+            
+</div>
+
+        <div class="box-body table-responsive no-padding">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>Execution Time</th>
+                        <th>Action</th>
+                        <th>Ref ID</th>
+                        <th>Info</th>
+                        <th>Status</th>
+                    </tr>
+
+                    @foreach (var detail in Model.Details)
+                    {
+                    <tr>
+                        <td>@detail.ExecutionTime</td>
+                        <td>@detail.Action</td>
+                        <td>@detail.RefId</td>
+                        <td>@detail.Info</td>
+                        <td>@detail.Status</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

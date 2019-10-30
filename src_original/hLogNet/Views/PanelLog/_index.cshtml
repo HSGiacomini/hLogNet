@@ -1,0 +1,42 @@
+﻿@model hLogNet.ViewModels.ProcessPanelViewModel
+@{}
+
+<section class="content-header">
+    <h1>
+        hLogNet
+        <small>Logger dos processos do e-commerce</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    </ol>
+</section>
+<section class="content">
+
+  
+
+
+    <div class="row">
+        @foreach (var group in Model.Groups)
+        {
+        <div class="box box-default">
+            <div class="box-header with-border">
+                <i class="fa fa-warning"></i>
+                <h3 class="box-title">@group</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                @foreach (var process in Model.Process.Where(x=>x.Group == group).ToList())
+                {
+                   
+                    <div class="col-md-3">
+                        @{Html.RenderPartialAsync("_processPanel", process);}
+                    </div>
+                    
+                }
+                               
+            </div>
+        </div>
+        }
+    </div>
+
+
+</section>
